@@ -179,7 +179,7 @@ class OpenPayUBase extends OpenPayUNetwork
         $xml->endElement();
 
         // domain level - open
-        $xml->startElement(OpenPayU_Domain::getDomain4Message($startElement));
+        $xml->startElement(OpenPayUDomain::getDomain4Message($startElement));
 
         // message level - open
         $xml->startElement($startElement);
