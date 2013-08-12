@@ -11,7 +11,7 @@
 		
 */
 
-class OpenPayUDomain
+class OpenPayU_Domain
 {
 
     private static $msg2domain = null;
@@ -21,7 +21,7 @@ class OpenPayUDomain
      */
     private static function builder()
     {
-        OpenPayUDomain::$msg2domain = array
+        OpenPayU_Domain::$msg2domain = array
         (
             'OrderCreateRequest' => 'OrderDomainRequest',
             'OrderCreateResponse' => 'OrderDomainResponse',

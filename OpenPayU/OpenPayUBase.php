@@ -10,9 +10,6 @@
 	http://twitter.com/openpayu
 */
 
-if (!defined('OPENPAYU_LIBRARY'))
-    exit;
-
 class OpenPayUBase extends OpenPayUNetwork
 {
 
@@ -182,7 +179,7 @@ class OpenPayUBase extends OpenPayUNetwork
         $xml->endElement();
 
         // domain level - open
-        $xml->startElement(OpenPayUDomain::getDomain4Message($startElement));
+        $xml->startElement(OpenPayU_Domain::getDomain4Message($startElement));
 
         // message level - open
         $xml->startElement($startElement);
