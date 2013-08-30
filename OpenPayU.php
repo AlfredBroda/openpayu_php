@@ -10,7 +10,7 @@
 	http://twitter.com/openpayu
 */
 
-namespace OpenPayU;
+namespace PayU;
 
 class OpenPayU extends OpenPayUBase
 {

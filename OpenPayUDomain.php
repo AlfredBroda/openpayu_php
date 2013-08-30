@@ -11,7 +11,7 @@
 
 */
 
-namespace OpenPayU;
+namespace PayU;
 
 class OpenPayUDomain
 {
