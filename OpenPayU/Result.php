@@ -10,6 +10,8 @@
 	http://twitter.com/openpayu
 */
 
+namespace OpenPayU\OpenPayU;
+
 class OpenPayU_Result
 {
     private $status = '';

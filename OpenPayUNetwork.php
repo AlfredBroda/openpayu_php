@@ -10,6 +10,8 @@
 	http://twitter.com/openpayu
 */
 
+namespace OpenPayU;
+
 class OpenPayUNetwork
 {
     /** @var string OpenPayU EndPoint Url */

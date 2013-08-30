@@ -8,8 +8,10 @@
 	http://www.payu.com
 	http://openpayu.com
 	http://twitter.com/openpayu
-		
+
 */
+
+namespace OpenPayU;
 
 class OpenPayUDomain
 {
