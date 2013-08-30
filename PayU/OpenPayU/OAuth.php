@@ -12,6 +12,9 @@
 
 namespace PayU\OpenPayU;
 
+use PayU\OpenPayU;
+use PayU\OpenPayUOAuth;
+
 class OAuth extends OpenPayUOAuth
 {
     /**

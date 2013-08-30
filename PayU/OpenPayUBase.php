@@ -28,6 +28,15 @@ class OpenPayUBase extends OpenPayUNetwork
     }
 
     /**
+     * Show outputConsole message
+     * @access public
+     */
+    public static function getOutputConsole()
+    {
+        return OpenPayU::$outputConsole;
+    }
+
+    /**
      * Add $outputConsole message
      * @access public
      * @param string $header
