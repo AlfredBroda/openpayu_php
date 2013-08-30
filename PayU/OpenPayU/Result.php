@@ -12,147 +12,57 @@
 
 namespace PayU\OpenPayU;
 
-class OpenPayU_ResultOAuth
+class Result
 {
-    private $url = '';
-    private $code = '';
-    private $accessToken = '';
-    private $payuUserEmail = '';
-    private $payuUserId = '';
-    private $expiresIn = '';
-    private $refreshToken = '';
-    private $success = '';
+    private $status = '';
     private $error = '';
+    private $success = 0;
+    private $request = '';
+    private $response = '';
+    private $sessionId = '';
+    private $message = '';
+    private $countryCode = '';
+    private $reqId = '';
 
     /**
      * @access public
      * @return string
      */
-    public function getUrl()
+    public function getStatus()
     {
-        return $this->url;
+        return $this->status;
     }
 
     /**
      * @access public
      * @param $value
      */
-    public function setUrl($value)
+    public function setStatus($value)
     {
-        $this->url = $value;
+        $this->status = $value;
     }
 
     /**
      * @access public
      * @return string
      */
-    public function getCode()
+    public function getError()
     {
-        return $this->code;
+        return $this->error;
     }
 
     /**
      * @access public
      * @param $value
      */
-    public function setCode($value)
+    public function setError($value)
     {
-        $this->code = $value;
+        $this->error = $value;
     }
 
     /**
      * @access public
-     * @return string
-     */
-    public function getAccessToken()
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * @access public
-     * @param $value
-     */
-    public function setAccessToken($value)
-    {
-        $this->accessToken = $value;
-    }
-
-    /**
-     * @access public
-     * @return string
-     */
-    public function getPayuUserEmail()
-    {
-        return $this->payuUserEmail;
-    }
-
-    /**
-     * @access public
-     * @param $value
-     */
-    public function setPayuUserEmail($value)
-    {
-        $this->payuUserEmail = $value;
-    }
-
-    /**
-     * @access public
-     * @return string
-     */
-    public function getPayuUserId()
-    {
-        return $this->payuUserId;
-    }
-
-    /**
-     * @access public
-     * @param $value
-     */
-    public function setPayuUserId($value)
-    {
-        $this->payuUserId = $value;
-    }
-
-    /**
-     * @access public
-     * @return string
-     */
-    public function getExpiresIn()
-    {
-        return $this->expiresIn;
-    }
-
-    /**
-     * @access public
-     * @param $value
-     */
-    public function setExpiresIn($value)
-    {
-        $this->expiresIn = $value;
-    }
-
-    /**
-     * @access public
-     * @return string
-     */
-    public function getRefreshToken()
-    {
-        return $this->refreshToken;
-    }
-
-    /**
-     * @access public
-     * @param $value
-     */
-    public function setRefreshToken($value)
-    {
-        $this->refreshToken = $value;
-    }
-
-    /**
-     * @access public
-     * @return string
+     * @return int
      */
     public function getSuccess()
     {
@@ -172,18 +82,108 @@ class OpenPayU_ResultOAuth
      * @access public
      * @return string
      */
-    public function getError()
+    public function getRequest()
     {
-        return $this->error;
+        return $this->request;
     }
 
     /**
      * @access public
      * @param $value
      */
-    public function setError($value)
+    public function setRequest($value)
     {
-        $this->error = $value;
+        $this->request = $value;
+    }
+
+    /**
+     * @access public
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    /**
+     * @access public
+     * @param $value
+     */
+    public function setResponse($value)
+    {
+        $this->response = $value;
+    }
+
+    /**
+     * @access public
+     * @return string
+     */
+    public function getSessionId()
+    {
+        return $this->sessionId;
+    }
+
+    /**
+     * @access public
+     * @param $value
+     */
+    public function setSessionId($value)
+    {
+        $this->sessionId = $value;
+    }
+
+    /**
+     * @access public
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @access public
+     * @param $value
+     */
+    public function setMessage($value)
+    {
+        $this->message = $value;
+    }
+
+    /**
+     * @access public
+     * @return string
+     */
+    public function getCountryCode()
+    {
+        return $this->countryCode;
+    }
+
+    /**
+     * @access public
+     * @param $value
+     */
+    public function setCountryCode($value)
+    {
+        $this->countryCode = $value;
+    }
+
+    /**
+     * @access public
+     * @return string
+     */
+    public function getReqId()
+    {
+        return $this->reqId;
+    }
+
+    /**
+     * @access public
+     * @param $value
+     */
+    public function setReqId($value)
+    {
+        $this->reqId = $value;
     }
 
 }

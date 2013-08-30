@@ -72,7 +72,7 @@ class OpenPayUBase extends OpenPayUNetwork
      * @param XMLWriter $xml
      * @param array $data
      */
-    public static function arr2xml(XMLWriter $xml, $data)
+    public static function arr2xml(\XMLWriter $xml, $data)
     {
         if (!empty($data) && is_array($data)) {
             foreach ($data as $key => $value) {
@@ -136,13 +136,13 @@ class OpenPayUBase extends OpenPayUNetwork
     {
         $tree = null;
         while ($xml->read()) {
-            if ($xml->nodeType == XMLReader::END_ELEMENT) {
+            if ($xml->nodeType == \XMLReader::END_ELEMENT) {
                 return $tree;
-            } else if ($xml->nodeType == XMLReader::ELEMENT) {
+            } else if ($xml->nodeType == \XMLReader::ELEMENT) {
                 if (!$xml->isEmptyElement) {
                     $tree[$xml->name] = OpenPayUBase::read($xml);
                 }
-            } else if ($xml->nodeType == XMLReader::TEXT) {
+            } else if ($xml->nodeType == \XMLReader::TEXT) {
                 $tree = $xml->value;
             }
         }
@@ -164,7 +164,7 @@ class OpenPayUBase extends OpenPayUNetwork
         if (!is_array($data))
             return false;
 
-        $xml = new XmlWriter();
+        $xml = new \XmlWriter();
         $xml->openMemory();
         $xml->startDocument($xml_version, $xml_encoding);
         $xml->startElementNS(null, 'OpenPayU', 'http://www.openpayu.com/openpayu.xsd');
@@ -243,7 +243,7 @@ class OpenPayUBase extends OpenPayUNetwork
      */
     public static function parseOpenPayUDocument($xmldata)
     {
-        $xml = new XMLReader();
+        $xml = new \XMLReader();
         $xml->XML($xmldata);
 
         $assoc = self::read($xml);

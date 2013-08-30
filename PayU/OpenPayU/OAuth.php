@@ -12,7 +12,7 @@
 
 namespace PayU\OpenPayU;
 
-class OpenPayU_OAuth extends OpenPayUOAuth
+class OAuth extends OpenPayUOAuth
 {
     /**
      * Function returns authorize by code response
@@ -20,14 +20,14 @@ class OpenPayU_OAuth extends OpenPayUOAuth
      * @param string $code
      * @param string $returnUri
      * @param bool $debug
-     * @return OpenPayU_ResultOAuth $result
+     * @return ResultOAuth $result
      */
     public static function accessTokenByCode($code, $returnUri, $debug = TRUE)
     {
 
-        $url = OpenPayU_Configuration::getServiceUrl() . 'user/oauth/authorize';
+        $url = Configuration::getServiceUrl() . 'user/oauth/authorize';
 
-        $result = new OpenPayU_ResultOAuth();
+        $result = new ResultOAuth();
         $result->setUrl($url);
         $result->setCode($code);
 
@@ -38,7 +38,7 @@ class OpenPayU_OAuth extends OpenPayUOAuth
 
         try {
             OpenPayU::setOpenPayuEndPoint($url);
-            $json = OpenPayuOAuth::getAccessTokenByCode($code, OpenPayU_Configuration::getClientId(), OpenPayU_Configuration::getClientSecret(), $returnUri);
+            $json = OpenPayuOAuth::getAccessTokenByCode($code, Configuration::getClientId(), Configuration::getClientSecret(), $returnUri);
 
             $result->setAccessToken($json->{'access_token'});
             if (isset($json->{'payu_user_email'})) {
@@ -64,13 +64,13 @@ class OpenPayU_OAuth extends OpenPayUOAuth
      * Function returns authorize by client credentials response
      * @access public
      * @param bool $debug
-     * @return OpenPayU_ResultOAuth $result
+     * @return ResultOAuth $result
      */
     public static function accessTokenByClientCredentials($debug = TRUE)
     {
-        $url = OpenPayU_Configuration::getServiceUrl() . 'oauth/authorize';
+        $url = Configuration::getServiceUrl() . 'oauth/authorize';
 
-        $result = new OpenPayU_ResultOAuth();
+        $result = new ResultOAuth();
         $result->setUrl($url);
 
         OpenPayU::setOpenPayuEndPoint($url);
@@ -80,7 +80,7 @@ class OpenPayU_OAuth extends OpenPayUOAuth
 
         try {
             OpenPayU::setOpenPayuEndPoint($url);
-            $json = OpenPayUOAuth::getAccessTokenByClientCredentials(OpenPayU_Configuration::getClientId(), OpenPayU_Configuration::getClientSecret());
+            $json = OpenPayUOAuth::getAccessTokenByClientCredentials(Configuration::getClientId(), Configuration::getClientSecret());
 
             $result->setAccessToken($json->{'access_token'});
             if (isset($json->{'payu_user_email'})) {

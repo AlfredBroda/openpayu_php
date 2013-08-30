@@ -12,7 +12,7 @@
 
 namespace PayU\OpenPayU;
 
-class OpenPayU_Configuration
+class Configuration
 {
     public static $env = 'sandbox';
     public static $merchantPosId = '';
